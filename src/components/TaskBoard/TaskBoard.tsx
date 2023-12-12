@@ -1,6 +1,6 @@
 import { useDroppable } from "@dnd-kit/core";
 import { rectSortingStrategy, SortableContext } from "@dnd-kit/sortable";
-import TaskCard from "./taskCard";
+import TaskCard from "./TaskCard";
 import { GridItem, Heading, Box } from '@chakra-ui/react'
 
 const TaskBoard = ({

@@ -26,8 +26,8 @@ const useLoginForm = () => {
     try {
       const response = await routeHttp.post('/api/login', inputData);
       localStorage.setItem('token', response.data.token);
-      setLoading(true);
       router.push('/home');
+      setLoading(true);
     } catch (error: any) {
       if (error.response.status === 401) {
         setLoginErrorMessage('メールアドレスまたはパスワードが間違っています。')

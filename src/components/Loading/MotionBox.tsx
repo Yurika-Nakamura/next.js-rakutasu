@@ -1,11 +1,7 @@
-'use client'
-import { motion, HTMLMotionProps, isValidMotionProp } from 'framer-motion'
+import { motion, HTMLMotionProps } from 'framer-motion'
 import { chakra, HTMLChakraProps } from '@chakra-ui/react'
-import { FC } from 'react'
 
 type Merge<P, T> = Omit<P, keyof T> & T
-type MotionBoxProps = Merge<HTMLChakraProps<'div'>, HTMLMotionProps<'div'>>
+type MotionDivProps = Merge<HTMLChakraProps<'div'>, HTMLMotionProps<'div'>>
 
-export const MotionBox: FC<MotionBoxProps> = chakra(motion.div, {
-  shouldForwardProp: isValidMotionProp,
-})
+export const MotionBox: React.FC<MotionDivProps> = motion(chakra.div as any)

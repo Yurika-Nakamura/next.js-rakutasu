@@ -1,7 +1,7 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { UniqueIdentifier } from "@dnd-kit/core";
-import { ToDoItem, InProgressItem, InReviewItem, DoneItem } from './taskItem'
+import { ToDoItem, InProgressItem, InReviewItem, DoneItem } from './TaskItem'
 
 const TaskCard = ({ id, cardName }: { id: UniqueIdentifier, cardName: string }) => {
   const { attributes, listeners, setNodeRef, transform, transition } =

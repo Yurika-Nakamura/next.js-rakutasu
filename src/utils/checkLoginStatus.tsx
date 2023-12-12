@@ -1,10 +1,11 @@
 'use client'
 import { useEffect } from 'react'
 import { routeHttp } from './api'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 const CheckLoginStatus = () => {
     const router = useRouter();
+    const params = usePathname();
     
     useEffect (() => {
         const checkLogin = async () => {
@@ -17,6 +18,11 @@ const CheckLoginStatus = () => {
                             "Authorization": `Bearer ${loginToken}`
                         },
                     });
+                    if (params === '/login' || '/register') {
+                        if (response.status === 200) {
+                            router.push('/home');
+                        }
+                    }
                     if (response.status === 401) {
                         router.push('/login');
                     }
